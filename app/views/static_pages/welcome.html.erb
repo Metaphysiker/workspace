@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" href="#">Workspace</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -36,4 +36,73 @@
 <div class="container">
   <h1>StaticPages#welcome</h1>
   <p>Find me in app/views/static_pages/welcome.html.erb</p>
+  <div id='calendar'></div>
 </div>
+
+<script>
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      initialView: 'dayGridMonth',
+      initialDate: '2020-12-07',
+      headerToolbar: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'dayGridMonth,timeGridWeek,timeGridDay'
+      },
+      events: [
+        {
+          title: 'All Day Event',
+          start: '2020-12-01'
+        },
+        {
+          title: 'Long Event',
+          start: '2020-12-07',
+          end: '2020-12-10'
+        },
+        {
+          groupId: '999',
+          title: 'Repeating Event',
+          start: '2020-12-09T16:00:00'
+        },
+        {
+          groupId: '999',
+          title: 'Repeating Event',
+          start: '2020-12-16T16:00:00'
+        },
+        {
+          title: 'Conference',
+          start: '2020-12-11',
+          end: '2020-12-13'
+        },
+        {
+          title: 'Meeting',
+          start: '2020-12-12T10:30:00',
+          end: '2020-12-12T12:30:00'
+        },
+        {
+          title: 'Lunch',
+          start: '2020-12-12T12:00:00'
+        },
+        {
+          title: 'Meeting',
+          start: '2020-12-12T14:30:00'
+        },
+        {
+          title: 'Birthday Party',
+          start: '2020-12-13T07:00:00'
+        },
+        {
+          title: 'Click for Google',
+          url: 'http://google.com/',
+          start: '2020-12-28'
+        }
+      ]
+    });
+
+    calendar.render();
+  });
+
+</script>
