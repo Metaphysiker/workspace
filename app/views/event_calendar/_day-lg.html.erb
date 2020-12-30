@@ -7,7 +7,7 @@
 
     <div class="border border-info rounded text-white bg-info w-100 p-1 trigger-hover-div-for-event mb-1" data-event-id="<%= event.id %>">
       <small>
-        <%= event.starting.strftime("%H:%m") %> - <%= event.ending.strftime("%H:%m") %>
+        <%= event.starting.strftime("%H:%M") %> - <%= event.ending.strftime("%H:%M") %>
       </small>
       <br />
       <%= link_to event.title, event_path(event), class: "text-white" %>
