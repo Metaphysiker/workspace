@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :notes
   get '/event_calendar/calendar/(:date)', to: 'event_calendar#calendar', as: 'event_calendar'
 
   resources :events
