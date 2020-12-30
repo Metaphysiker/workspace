@@ -2,7 +2,7 @@
   <h1>Notes</h1>
   <% @notes.order(:created_at).reverse_order.each do |note| %>
     <hr />
-    <%= link_to "#{note.title} - #{note.created_at}", note_path(note) %>
+    <%= link_to "#{note.title} - #{note.created_at}", note_path(note) %> - <%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %>
   <% end %>
   <hr />
   <%= link_to 'New Note', new_note_path %>
