@@ -1,0 +1,16 @@
+<div class="float-right small-text"><small><%= day.strftime("%-d") %></small></div>
+<br>
+<%# events = events.where(start_of_date: day)%>
+<% events = events.between(day.beginning_of_day, day.end_of_day)%>
+<%# events = Event.all %>
+<% events.each do |event| %>
+
+    <div class="border border-info rounded text-white bg-info w-100 p-1 trigger-hover-div-for-event mb-1" data-event-id="<%= event.id %>">
+      <small>
+        <%= event.starting.strftime("%H:%m") %> - <%= event.ending.strftime("%H:%m") %>
+      </small>
+      <br />
+      <%= link_to event.title, event_path(event), class: "text-white" %>
+    </div>
+
+<% end %>
