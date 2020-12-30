@@ -7,10 +7,10 @@
     <%= f.input :title %>
     <%= f.input :starting, start_year: Date.today.year,
                               end_year: Date.today.year + 2,
-                              order: [:month, :year], minute_step: 5 %>
+                              order: [:day, :month, :year], minute_step: 5, default: {hour: 12, minute: 00} %>
     <%= f.input :ending, start_year: Date.today.year,
                               end_year: Date.today.year + 2,
-                              order: [:month, :year], minute_step: 5 %>
+                              order: [:day, :month, :year], minute_step: 5, default: {hour: 12, minute: 00} %>
   </div>
 
   <div class="form-actions">
