@@ -14,3 +14,6 @@
     </div>
 
 <% end %>
+<hr />
+<%= link_to 'New Event', new_event_path(starting: day.beginning_of_day, ending: day.beginning_of_day) %>
+<%#= render 'events/form', event: Event.new(starting: day.beginning_of_day, ending: day.beginning_of_day) %>
