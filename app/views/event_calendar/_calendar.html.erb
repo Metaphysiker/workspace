@@ -32,7 +32,7 @@
         <% end %>
       </div>
 
-      <div class="d-none d-md-block">
+      <div class="">
         <table class="table table-bordered rounded">
         <thead>
           <tr>
@@ -63,4 +63,9 @@
     </div>
 
   </div>
+
+  <%= render "events/event_list", events: events, date: date %>
+
+
+
 </div>
